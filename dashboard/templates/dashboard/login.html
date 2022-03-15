@@ -1,0 +1,14 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+<form action="" method="POST" class="mt-5 p-5 form-signin">
+    {% csrf_token %}
+    <h1 class="text-center h3 mb-3 font-weight-normal">Please log in</h1>
+    {% if msg %}<strong>{{msg}}</strong>{% endif %}
+    <label for="inputEmail" class="sr-only">Username</label>
+    <input type="text" name="username" id="inputUsername" class="m-3 form-control" placeholder="Username" required="" autofocus="">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" name="password" id="inputPassword" class="m-3 form-control" placeholder="Password" required="">
+    <button class="btn m-3 btn-lg btn-primary btn-block" type="submit">Log in</button>
+  </form>
+{% endblock content %}
